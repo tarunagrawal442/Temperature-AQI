@@ -176,7 +176,7 @@ rm(carbonmonoxide_file,temperature_file,nitrogendioxide_file,sulphurdioxide_file
 
 <h3 align="center"> Description of the variables </h3>
 
-<h5> **Variable 1: State Name** </h5>  
+<h5> Variable 1: State Name </h5>  
 
 This variable contains the names of states in the United States for which the data have been collected. The information about this variable is:
 
@@ -190,7 +190,7 @@ This variable contains the names of states in the United States for which the da
 ggplot(data = Mergedfile6) + geom_bar(mapping = aes(y=`State Name`), fill="white", color="black") + scale_x_continuous(minor_breaks = NULL) + theme_tufte()+ theme(axis.title.x =element_text(margin = margin(t = 10, r = 0, b = 0, l = 0))) + xlab("Number of Observations")
 ```
 
-<h5> **Variable 2: County Name** </h5> 
+<h5> Variable 2: County Name </h5> 
 
 This variable contains the names of counties in the United States for which the data have been collected. The information about this variable is:
 
@@ -205,7 +205,7 @@ df<-Mergedfile6 %>% group_by(`County Name`) %>% summarise(Count=n())
 ggplot(data = df, aes(x = Count, y =reorder(`County Name`,Count))) + geom_bar(stat='identity', fill="white", color="black", width = 0.05) + scale_x_continuous(minor_breaks = NULL) + theme(panel.background = element_rect(fill="white"),axis.title.x =element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),axis.title.y=element_text(margin = margin(t = 0, r = 15, b = 0, l = 0))) + xlab("Number of Observations") +ylab("County")
 ```
 
-<h5> **Variable 3: AQI**  </h5> 
+<h5> Variable 3: AQI  </h5> 
 
 This variable provides information about the day-wise AQI at the county level. The information about this variable is:
 
@@ -219,7 +219,7 @@ This variable provides information about the day-wise AQI at the county level. T
 ggplot(data = Mergedfile6) + geom_boxplot(mapping = aes(x=AQI), fill="white", color="black")+theme(panel.background = element_rect(fill="white"),axis.text.y =element_blank(),axis.ticks.y = element_blank(),axis.title.x =element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),axis.title.y=element_text(margin = margin(t = 0, r = 15, b = 0, l = 0)), axis.ticks.x = element_line(color = "black"))
 ```
 
-<h5> **Variable 4: Date Local** </h5> 
+<h5> Variable 4: Date Local </h5> 
 
 This variable contains the date of observation for the temperature and AQI. The information about this variable is:
 
@@ -233,7 +233,7 @@ This variable contains the date of observation for the temperature and AQI. The 
 ggplot(data = Mergedfile6) + geom_freqpoly(mapping = aes(x=`Date Local`),color="black")+ theme(panel.background = element_rect(fill="white"),axis.title.x =element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),axis.title.y=element_text(margin = margin(t = 0, r = 15, b = 0, l = 0))) + xlim(as.Date("2021-01-01"),as.Date("2021-10-31")) + xlab("Date")+ ylab("Number of Observations")
 ```
 
-<h5> **Variable 5: Temperature:** </h5> 
+<h5> Variable 5: Temperature: </h5> 
 
 This variable provides information about the temperature for the respective counties. The information about this variable is:
 
@@ -247,7 +247,7 @@ This variable provides information about the temperature for the respective coun
 ggplot(data = Mergedfile6) + geom_boxplot(mapping = aes(x=Temperature), fill="white", color="black") + scale_x_continuous(minor_breaks = NULL) +theme(panel.background = element_rect(fill="white"),axis.text.y =element_blank(),axis.ticks.y = element_blank(),axis.title.x =element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),axis.title.y=element_text(margin = margin(t = 0, r = 20, b = 0, l = 0)))
 ```
 
-<h5> **Variable 6: Gas:** </h5> 
+<h5> Variable 6: Gas: </h5> 
 
 This variable provides information about the Gases that are considered in the analysis.The information about this variable is:
 
@@ -265,7 +265,7 @@ attach(Mergedfile5_Gases_Average)
 ggplot(Mergedfile5_Gases_Average) + geom_bar(mapping = aes(x=Gas,y=`Average Concentration`), stat = "identity", fill="grey", color="grey") + theme_tufte() + theme(axis.title.x =element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),axis.title.y=element_text(margin = margin(t = 0, r = 15, b = 0, l = 0)))
 ```
 
-<h5> **Variable 7: Concentration:** </h5> 
+<h5> Variable 7: Concentration: </h5> 
 
 This variable provides information about the concentration of each Gas in a county corresponding to a given date. The unit used for concentration is parts per billion(ppb). The information about this variable is:
 
